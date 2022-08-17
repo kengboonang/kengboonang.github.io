@@ -12,7 +12,7 @@ body
     min-width: 100%;
     background: linear-gradient(#abb2b9,#85c1e9);
 }
-header
+body header
 {
     position: absolute;
     top: 0;
@@ -23,7 +23,7 @@ header
     justify-content: space-between;
     align-items: center;
 }
-header .logo
+body header .logo
 {
     color: blanchedalmond;
     font-weight: 700;
@@ -32,26 +32,26 @@ header .logo
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-header ul
+body header ul
 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header ul li
+body header ul li
 {
     list-style: none;
     margin-left: 20px;
 }
-header ul li a
+body header ul li a
 {
     text-decoration: none;
     padding: 6px 15px;
     color: blanchedalmond;  
     border-radius: 20px;
 }
-header ul li a:hover,
-header ul li a.active
+body header ul li a:hover,
+body header ul li a.active
 {
     background-color: #fff;
     color: black;
@@ -103,6 +103,6 @@ section img
     display: block;
     margin-left: auto;
     margin-right: auto;
-    min-width: 5px;
-    min-height: 5px;
+    width: 5px;
+    height: 5px;
 }
