@@ -11,7 +11,6 @@ body
     min-height: 100vh;
     min-width: 100%;
     background: linear-gradient(#2b2000,#500005);
-    background-color: #cccccc;
 }
 header
 {
