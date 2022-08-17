@@ -80,7 +80,7 @@ section img
 }
 .intro img
 {
-    position: absolute;
+    position: relative;
     align-self: center;
     min-width: 25px;
     min-height: 25px;
