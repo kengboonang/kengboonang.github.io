@@ -78,3 +78,9 @@ section img
     padding: 100px;
     background: blanchedalmond;
 }
+.intro h1
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: black;
+}
