@@ -12,7 +12,7 @@ body
     min-width: 100%;
     background: linear-gradient(#abb2b9,#85c1e9);
 }
-body header
+header
 {
     position: absolute;
     top: 0;
@@ -23,7 +23,7 @@ body header
     justify-content: space-between;
     align-items: center;
 }
-body header .logo
+header .logo
 {
     color: blanchedalmond;
     font-weight: 700;
@@ -32,30 +32,30 @@ body header .logo
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-body header ul
+header ul
 {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-body header ul li
+header ul li
 {
     list-style: none;
     margin-left: 20px;
 }
-body header ul li a
+header ul li a
 {
     text-decoration: none;
     padding: 6px 15px;
     color: blanchedalmond;  
     border-radius: 20px;
 }
-body header ul li a:hover
+header ul li a:hover
 {
     background-color: #fff;
     color: black;
 }
-body header ul li a.active
+header ul li a.active
 {
     background-color: #fff;
     color: black;
