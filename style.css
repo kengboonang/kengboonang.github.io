@@ -98,3 +98,11 @@ section img
     margin-bottom: 10px;
     color: black;
 }
+.intro a img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 5px;
+    min-height: 5px;
+}
