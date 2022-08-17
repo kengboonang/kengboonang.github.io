@@ -72,3 +72,9 @@ section img
     min-height: 100vh;
     object-fit: cover;
 }
+.intro
+{
+    position: relative;
+    padding: 100px;
+    background: blanchedalmond;
+}
