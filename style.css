@@ -78,7 +78,7 @@ section img
     padding: 100px;
     background: white;
 }
-.grav
+.intro .grav
 {
     display: block;
     margin-left: auto;
@@ -98,7 +98,7 @@ section img
     margin-bottom: 10px;
     color: black;
 }
-.intro ig
+.intro .ig
 {
     display: block;
     margin-left: auto;
