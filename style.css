@@ -76,12 +76,13 @@ section img
 {
     position: relative;
     padding: 100px;
-    background: whitesmoke;
+    background: white;
 }
 .intro img
 {
-    position: relative;
-    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     min-width: 25px;
     min-height: 25px;
 }
@@ -93,7 +94,7 @@ section img
 }
 .intro p 
 {
-    font-size: 3.5em;
+    font-size: 1.5em;
     margin-bottom: 10px;
     color: black;
 }
