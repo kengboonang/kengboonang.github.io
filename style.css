@@ -82,7 +82,7 @@ section img
     padding: 100px;
     background: white;
 }
-.intro img
+.intro #grav
 {
     display: block;
     margin-left: auto;
