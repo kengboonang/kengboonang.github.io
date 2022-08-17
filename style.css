@@ -1,0 +1,16 @@
+body
+{
+    min-height: 100vh;
+    background: url('https://www.freepik.com/free-vector/nature-scene-rural-land-agriculture-grassland-abtract-silhouette-asian-farmers-working-rice-field-illustration_12953540.htm#query=landscape%20illustration&position=24&from_view=keyword');
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
