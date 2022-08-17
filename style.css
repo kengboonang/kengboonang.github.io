@@ -76,7 +76,14 @@ section img
 {
     position: relative;
     padding: 100px;
-    background: blanchedalmond;
+    background: whitesmoke;
+}
+.intro img
+{
+    position: absolute;
+    align-self: center;
+    min-width: 25px;
+    min-height: 25px;
 }
 .intro h1
 {
