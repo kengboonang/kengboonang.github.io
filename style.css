@@ -50,7 +50,11 @@ body header ul li a
     color: blanchedalmond;  
     border-radius: 20px;
 }
-body header ul li a:hover,
+body header ul li a:hover
+{
+    background-color: #fff;
+    color: black;
+}
 body header ul li a.active
 {
     background-color: #fff;
