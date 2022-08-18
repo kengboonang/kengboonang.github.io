@@ -123,3 +123,14 @@ section img
     margin-bottom: 10px;
     color: black;
 }
+.code #infobox{
+    display: block;
+    background-color: white;
+    border-radius: 20px;
+}
+.code .infobox title{
+    font-size: 2.5em;
+}
+.code .infobox p{
+    font-size: 2em;
+}
