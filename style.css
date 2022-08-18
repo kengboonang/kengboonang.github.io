@@ -131,6 +131,7 @@ section img
 }
 .code .infobox h3{
     font-size: 2.5em;
+    border-radius: 20px;
 }
 .code .infobox p{
     font-size: 2em;
