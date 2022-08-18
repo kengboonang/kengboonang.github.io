@@ -85,6 +85,9 @@ section img
     min-height: auto;
     object-fit: cover;
 }
+section #tech{
+    height: 70vh;
+}
 
 .intro
 {
