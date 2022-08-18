@@ -54,7 +54,7 @@ header ul li a
 header ul li a:hover,
 header ul li a.active
 {
-    background-color: blanchedalmond;
+    background-color: blanchedalmond !important;
     color: black;
 }
 
