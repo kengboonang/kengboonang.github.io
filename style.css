@@ -51,7 +51,7 @@ header ul li a
     color: blanchedalmond;  
     border-radius: 20px;
 }
-header ul li a :hover
+header ul li a :hover,
 header ul li a .active
 {
     background-color: blanchedalmond;
