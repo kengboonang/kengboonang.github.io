@@ -54,8 +54,8 @@ header ul li a
 header ul li a:hover,
 header ul li a.active
 {
-    background-color: blanchedalmond !important;
-    color: black !important;
+    background-color: blanchedalmond;
+    color: black;
 }
 
 section
@@ -75,7 +75,7 @@ section img
     object-fit: cover;
 }
 
-div .intro
+/* div .intro
 {
     position: relative;
     padding: 100px;
@@ -108,4 +108,4 @@ div .intro #ig
     margin-right: auto;
     width: 15px;
     height: 15px;
-}
+} */
