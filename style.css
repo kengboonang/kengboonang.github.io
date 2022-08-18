@@ -58,7 +58,7 @@ header ul li a.active
     color: black;
 }
 
-section
+/* section
 {
     position: relative;
     width: 100%;
@@ -73,9 +73,9 @@ section img
     width: 100%;
     min-height: 100vh;
     object-fit: cover;
-}
+} */
 
-/* div .intro
+div .intro
 {
     position: relative;
     padding: 100px;
@@ -108,4 +108,4 @@ div .intro #ig
     margin-right: auto;
     width: 15px;
     height: 15px;
-} */
+}
