@@ -12,6 +12,7 @@ body
     min-width: 100%;
     background: linear-gradient(#abb2b9,#85c1e9);
 }
+
 header
 {
     position: absolute;
@@ -56,6 +57,7 @@ header ul li a.active
     background-color: blanchedalmond;
     color: black;
 }
+
 section
 {
     position: relative;
@@ -72,13 +74,14 @@ section img
     min-height: 100vh;
     object-fit: cover;
 }
-.intro
+
+div .intro
 {
     position: relative;
     padding: 100px;
     background: white;
 }
-.intro img
+div .intro img
 {
     display: block;
     margin-left: auto;
@@ -86,19 +89,19 @@ section img
     min-width: 25px;
     min-height: 25px;
 }
-.intro h1
+div .intro h1
 {
     font-size: 3.5em;
     margin-bottom: 10px;
     color: black;
 }
-.intro p 
+div .intro p 
 {
     font-size: 1.5em;
     margin-bottom: 10px;
     color: black;
 }
-.intro #ig
+div .intro #ig
 {
     display: block;
     margin-left: auto;
