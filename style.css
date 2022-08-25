@@ -5,10 +5,9 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
-.url{
     cursor: url(/img/adam_ugly_ass_head.svg),auto;
 }
+
 body
 {
     min-height: 100vh;
