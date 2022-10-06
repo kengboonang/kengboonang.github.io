@@ -1,65 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title> Keng Boon's webpage </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KB GitHub ver 2.0</title>
     <!-- Bootstrap CSS -->
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' 
         rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' 
         crossorigin='anonymous'>
+    <!-- Bootstrap Javascript -->
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' 
+        integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' 
+        crossorigin='anonymous'></script>
+    <style>
+        
+    </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">Github.io</a>
-        <ul>
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="#introduction">About</a></li>
-            <li><a href="#code">Code</a></li>
-            <li><a href="#climb">Climb</a></li>
-            <li><a href="#social">Contact</a></li>
-        </ul>
-    </header>
-    
-    <section>
-        <img src="img/grav.jpg" id="grav">
-    </section>
-
-    <div class="intro" id="introduction">
-        <img src="https://media-exp1.licdn.com/dms/image/C5603AQGb3CBZyCvwKg/profile-displayphoto-shrink_400_400/0/1651555120792?e=1666224000&v=beta&t=58YBJ3QZZLhWzIwO7sNLSCMeMnd9ZQpiM2sCEr-W2Xs"></img>
-        <h1>Hi, I am Keng Boon!</h1>
-        <p>I'm a Year 2 Information Systems's student studying in Singapore Management University(SMU)! Apart from my love for problem-solving through coding, I also have a huge passion for Climbing, serving as the VP of SMU's Climb Team and competing for the University.</p>
+    <!-- navbar -->
+    <div class="container my-5">
+        <nav class='navbar navbar-expand-lg bg-dark navbar-dark'>
+            <div class='container-fluid'>
+                <a class='navbar-brand' href='#'>KengBoon.Github.io</a>
+                <button class='navbar-toggler' type='button' data-bs-toggle='collapse' 
+                         data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' 
+                         aria-expanded='false' aria-label='Toggle navigation'>
+                    <span class='navbar-toggler-icon'></span>
+                </button>
+                <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                    <ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+                        <li class='nav-item'>
+                            <a class='nav-link active' aria-current='page' href='#'>Home</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>About</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Coding Projects</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Climbing</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Contact</a>
+                        </li>
+                    <form class='d-flex'>
+                        <input class='form-control me-2' type='search' placeholder='Search' aria-label='Search'>
+                        <button class='btn btn-outline-success' type='submit'>Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        
     </div>
+    <!-- navbar end -->
 
-    <section>
-        <img src="img/tech.png" id="tech">
-    </section>
-
-    <div class="code" id="code">
-        <h1>My Coding Experience</h1>
-        <div class="info_box" id="box1">
-            <h3><a href="https://github.com/kengboonang/madlib">Madlib game</a></h3>
-            <p>A Madlib generator using user inputs to create stories based on stored templates</p>
-        </div>
-        <div class="info_box" id="box1">
-            <h3><a href="https://github.com/kengboonang/Number-guessing">Number guessing game</a></h3>
-            <p>A number-guessing project where hints are provided after each attempt. There are 2 versions to try out.</p>
-        </div>
-        <div class="info_box" id="box1">
-            <h3><a href="https://github.com/kengboonang/Dice-rolling">Dice rolling</a></h3>
-            <p>A literal virtual dice rolling script.</p>
-        </div>
+    <!-- intro -->
+    <div class="container text-center" id="about">
+        <img src="https://media-exp1.licdn.com/dms/image/C5603AQGb3CBZyCvwKg/profile-displayphoto-shrink_400_400/0/1651555120792?e=1666224000&v=beta&t=58YBJ3QZZLhWzIwO7sNLSCMeMnd9ZQpiM2sCEr-W2Xs" id="intro_img" class="img-fluid ">
+        <h1 class="fw-bolder">Hi, I am Keng Boon!</h1>
+        <p class="img-fluid fw-normal">I'm a Year 2 Information Systems's student studying in Singapore Management University(SMU)! Apart from my love for problem-solving through coding, I also have a huge passion for Climbing, serving as the VP of SMU's Climb Team and competing for the University.</p>
     </div>
+    <!-- intro end -->
 
-    <section>
-        <img src="img/mountain.png" id="mountain">
-    </section>
-    <div class="climb" id="climb">
-        <h1>My Climbing Journey</h1>
+    <!-- code projects -->
+    <div class="container my-5 text-center" id="code">
+        <h1 class="fw-bolder">
+            Coding Projects
+        </h1>
+        <div class="row g-3">
+            
+                <div class='card mx-auto col-4 bg-info' style='width: 18rem;'>
+                        <h5 class='card-title'><a href="https://github.com/kengboonang/madlib">Madlib game</a></h5>
+                        <p class='card-text'>A Madlib generator using user inputs to create stories based on stored templates</p>
+                </div> <!-- card -->
+
+                <div class='card mx-auto col-4 bg-info' style='width: 18rem;'>
+                        <h5 class='card-title'><a href="https://github.com/kengboonang/Number-guessing">Number guessing game</a></h5>
+                        <p>A number-guessing project where hints are provided after each attempt. There are 2 versions to try out.</p>
+                </div> <!-- card -->
+
+                <div class='card mx-auto col-4 bg-info' style='width: 18rem;'>
+                    <h5 class='card-title'><a href="https://github.com/kengboonang/Dice-rolling">Dice rolling</a></h5>
+                    <p>A literal virtual dice rolling script.</p>
+                </div> <!-- card -->
+
+        </div>
+        
+    </div>
+    <!-- code project end -->
+
+    <!-- climb -->
+    <div class="container my-5" id="climb">
+        <h1 class="text-center fw-bolder">My Climbing Journey</h1>
         <script src="https://apps.elfsight.com/p/platform.js" defer></script>
         <div class="elfsight-app-86fc62c4-b642-4e26-a1c3-e6337a662c3d"></div>
     </div>
+    <!-- climb end -->
 
-    <div class="social" id="social">
-        <a href="https://www.linkedin.com/in/keng-boon-ang-896a88125/"><img src="img/linkedin.png" id="linkedin"></a>
-        <a href="https://github.com/kengboonang"><img src="img/github.png" id="github"></a>
-        
+    <!-- contact -->
+    <div class="container my-5" id="contact">
+        <h1 class="text-center fw-bolder">Contact Me!</h1>
+        <div class="row text-center">
+            <div class="col">
+                <a href="https://www.linkedin.com/in/keng-boon-ang-896a88125/"><img src="img/linkedin.png" id="linkedin" class="img-fluid w-50"></a>
+            </div>
+
+            <div class="col">
+                <a href="https://github.com/kengboonang"><img src="img/github.png" id="github" class="img-fluid bg-dark rounded-5 w-50"></a>
+            </div>
+
+        </div>
     </div>
+    <!-- contact end -->
 </body>
+</html>
