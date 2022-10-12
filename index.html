@@ -9,12 +9,33 @@
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css' 
         rel='stylesheet' integrity='sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx' 
         crossorigin='anonymous'>
+
+    <!-- CDNS -->
     <!-- Bootstrap Javascript -->
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' 
         integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' 
         crossorigin='anonymous'></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
     <style>
-        
+        /* 
+        * Always set the map height explicitly to define the size of the div element
+        * that contains the map. 
+        */
+        #map {
+        height: 80%;
+        }
+
+        /* 
+        * Optional: Makes the sample page fill the window. 
+        */
+        html,
+        body {
+        height: 80%;
+        margin: 100px;
+        padding: 0;
+        }
     </style>
 </head>
 <body>
@@ -90,6 +111,143 @@
         
     </div>
     <!-- code project end -->
+
+    <!-- map api -->
+    <div class="container">
+            <div>
+                <h1>Map testing with my face</h1>
+                <h3 id="latlong">Try clicking on one of my faces!</h3>
+                <hr>
+                <h3>Alternatively, you can also create a marker by clicking anywhere on the map!</h3>
+                <hr>
+                <input type="button" value="Delete All Created Markers" onclick="DeleteMarkers()" />
+            </div>
+            <div id="map"></div>
+
+            <!-- 
+            The `defer` attribute causes the callback to execute after the full HTML
+            document has been parsed. For non-blocking uses, avoiding race conditions,
+            and consistent behavior across browsers, consider loading using Promises
+            with https://www.npmjs.com/package/@googlemaps/js-api-loader.
+            -->
+            <script>
+                function initMap() {
+                    const map = new google.maps.Map(document.getElementById("map"), {
+                        zoom: 3,
+                        center: { lat: -28.024, lng: 140.887 },
+                    });
+                    const infoWindow = new google.maps.InfoWindow({
+                        content: "",
+                        disableAutoPan: true,
+                    });
+                    // Create an array of alphabetical characters used to label the markers.
+                    const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                    // Add some markers to the map.
+                    const markers = locations.map((position, i) => {
+                        const label = labels[i % labels.length];
+                        const marker = new google.maps.Marker({
+                        position,
+                        label
+                        });
+
+                        // markers can only be keyboard focusable when they have click listeners
+                        marker.setIcon('./img/head.jfif');
+                        // open info window when marker is clicked
+                        marker.addListener("click", (googleMapsEvent) => {
+                        infoWindow.setContent(label);
+                        infoWindow.open(map, marker);
+                        document.getElementById('latlong').innerText = 'latitude: ' + googleMapsEvent.latLng.lat() + ' longitude: ' + googleMapsEvent.latLng.lng();
+                        });
+                        return marker;
+                    });
+
+                    // Add a marker clusterer to manage the markers.
+                    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+                    map.addListener("click", (e) => {
+                        placeMarkerAndPanTo(e.latLng, map);
+                    });
+                    }
+
+                    // create marker a.k.a adam's face on click
+                    function placeMarkerAndPanTo(latLng, map) {
+                        var marker = new google.maps.Marker({
+                            position: latLng,
+                            map: map,
+                            icon: './img/head.jfif'
+                        });
+                        const infoWindow = new google.maps.InfoWindow({
+                            content: "",
+                            disableAutoPan: true,
+                            });
+                        // Set unique id
+                        marker.id = uniqueId;
+                        uniqueId++;
+                        // set infoWindow
+                        var label = 'Swiny cat meow meow meow';
+                        // 'tag' the new marker
+                        label += "<br /><input type = 'button' va;ue = 'Delete' onclick = 'DeleteMarker(" + marker.id + ");' value = 'Delete' />";
+                        marker.addListener("click", (googleMapsEvent) => {
+                            infoWindow.setContent(label);
+                            infoWindow.open(map, marker);});
+                        //Add marker to the array.
+                        markers.push(marker);
+                        // pan to marker
+                        map.panTo(latLng);
+                        }
+
+                    function DeleteMarker(id) {
+                        //Find and remove the marker from the Array
+                        for (var i = 0; i < markers.length; i++) {
+                            if (markers[i].id == id) {
+                                //Remove the marker from Map                  
+                                markers[i].setMap(null);
+                
+                                //Remove the marker from array.
+                                markers.splice(i, 1);
+                                return;
+                            }
+                        }
+                    };
+                    
+                    // separate list for newly created markers
+                    var markers = [];
+                    var uniqueId = 1;
+
+                    const locations = [
+                    { lat: -31.56391, lng: 147.154312 },
+                    { lat: -33.718234, lng: 150.363181 },
+                    { lat: -33.727111, lng: 150.371124 },
+                    { lat: -33.848588, lng: 151.209834 },
+                    { lat: -33.851702, lng: 151.216968 },
+                    { lat: -34.671264, lng: 150.863657 },
+                    { lat: -35.304724, lng: 148.662905 },
+                    { lat: -36.817685, lng: 175.699196 },
+                    { lat: -36.828611, lng: 175.790222 },
+                    { lat: -37.75, lng: 145.116667 },
+                    { lat: -37.759859, lng: 145.128708 },
+                    { lat: -37.765015, lng: 145.133858 },
+                    { lat: -37.770104, lng: 145.143299 },
+                    { lat: -37.7737, lng: 145.145187 },
+                    { lat: -37.774785, lng: 145.137978 },
+                    { lat: -37.819616, lng: 144.968119 },
+                    { lat: -38.330766, lng: 144.695692 },
+                    { lat: -39.927193, lng: 175.053218 },
+                    { lat: -41.330162, lng: 174.865694 },
+                    { lat: -42.734358, lng: 147.439506 },
+                    { lat: -42.734358, lng: 147.501315 },
+                    { lat: -42.735258, lng: 147.438 },
+                    { lat: -43.999792, lng: 170.463352 },
+                    ];
+
+                    window.initMap = initMap;
+            </script>
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6a6E_r_udr7CXLmLZ-6HspypPd9qvMU&callback=initMap&v=weekly"
+            defer
+            ></script>
+            <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    </div>
+    <!-- map api end -->
 
     <!-- climb -->
     <div class="container my-5" id="climb">
