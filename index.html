@@ -15,6 +15,7 @@
     <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js' 
         integrity='sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa' 
         crossorigin='anonymous'></script>
+    <!-- Google map CDN -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 
@@ -106,17 +107,14 @@
     <!-- code project end -->
 
     <!-- map api -->
-    <div class="container">
-            <div class="container2">
-                <h1>Map testing with my face</h1>
-                <h3 id="latlong">Try clicking on one of my faces!</h3>
-                <hr>
-                <h3>Alternatively, you can also create a marker by clicking anywhere on the map!</h3>
-                <hr>
-                <input type="button" value="Delete All Created Markers" onclick="DeleteMarkers()" />
-            </div>
-            <div id="map"></div>
+    <div>
+        <h1>Map testing with my face</h1>
+        <hr>
+        <h3>Alternatively, you can also create a marker by clicking anywhere on the map!</h3>
+        <hr>
+        <input type="button" value="Delete All Created Markers" onclick="DeleteMarkers()" />
     </div>
+    <div id="map"></div>
     <!-- map api end -->
 
     <!-- climb -->
@@ -159,10 +157,16 @@
 
             // create marker a.k.a adam's face on click
             function placeMarkerAndPanTo(latLng, map) {
+                const icon = {
+                    url: "./img/head.jpg", // url
+                    scaledSize: new google.maps.Size(50, 50), // scaled size
+                    // origin: new google.maps.Point(0,0), // origin
+                    // anchor: new google.maps.Point(0, 0) // anchor
+                };
                 var marker = new google.maps.Marker({
                     position: latLng,
                     map: map,
-                    icon: './img/head.jpeg'
+                    icon: icon
                 });
                 const infoWindow = new google.maps.InfoWindow({
                     content: "",
@@ -197,6 +201,15 @@
                     }
                 }
             };
+
+            function DeleteMarkers() {
+                for (var i = 0; i < (markers.length)+1; i++) {
+                    //Remove the marker from Map                  
+                    markers[i].setMap(null);
+                }
+                markers = []
+                uniqueId = 1
+            }
             
             // separate list for newly created markers
             var markers = [];
