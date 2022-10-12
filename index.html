@@ -19,17 +19,10 @@
 
 
     <style>
-        /* 
-        * Always set the map height explicitly to define the size of the div element
-        * that contains the map. 
-        */
         #map {
         height: 80%;
         }
 
-        /* 
-        * Optional: Makes the sample page fill the window. 
-        */
         html,
         body {
         height: 80%;
@@ -114,7 +107,7 @@
 
     <!-- map api -->
     <div class="container">
-            <div>
+            <div class="container2">
                 <h1>Map testing with my face</h1>
                 <h3 id="latlong">Try clicking on one of my faces!</h3>
                 <hr>
@@ -123,79 +116,6 @@
                 <input type="button" value="Delete All Created Markers" onclick="DeleteMarkers()" />
             </div>
             <div id="map"></div>
-
-            <!-- 
-            The `defer` attribute causes the callback to execute after the full HTML
-            document has been parsed. For non-blocking uses, avoiding race conditions,
-            and consistent behavior across browsers, consider loading using Promises
-            with https://www.npmjs.com/package/@googlemaps/js-api-loader.
-            -->
-            <script>
-                function initMap() {
-                    const map = new google.maps.Map(document.getElementById("map"), {
-                        zoom: 3,
-                        center: { lat: -28.024, lng: 140.887 },
-                    });
-
-                    // Add a marker clusterer to manage the markers.
-                    const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
-                    map.addListener("click", (e) => {
-                        placeMarkerAndPanTo(e.latLng, map);
-                    });
-                    }
-
-                    // create marker a.k.a adam's face on click
-                    function placeMarkerAndPanTo(latLng, map) {
-                        var marker = new google.maps.Marker({
-                            position: latLng,
-                            map: map,
-                            icon: './img/head.jfif'
-                        });
-                        const infoWindow = new google.maps.InfoWindow({
-                            content: "",
-                            disableAutoPan: true,
-                            });
-                        // Set unique id
-                        marker.id = uniqueId;
-                        uniqueId++;
-                        // set infoWindow
-                        var label = 'Swiny cat meow meow meow';
-                        // 'tag' the new marker
-                        label += "<br /><input type = 'button' va;ue = 'Delete' onclick = 'DeleteMarker(" + marker.id + ");' value = 'Delete' />";
-                        marker.addListener("click", (googleMapsEvent) => {
-                            infoWindow.setContent(label);
-                            infoWindow.open(map, marker);});
-                        //Add marker to the array.
-                        markers.push(marker);
-                        // pan to marker
-                        map.panTo(latLng);
-                        }
-
-                    function DeleteMarker(id) {
-                        //Find and remove the marker from the Array
-                        for (var i = 0; i < markers.length; i++) {
-                            if (markers[i].id == id) {
-                                //Remove the marker from Map                  
-                                markers[i].setMap(null);
-                
-                                //Remove the marker from array.
-                                markers.splice(i, 1);
-                                return;
-                            }
-                        }
-                    };
-                    
-                    // separate list for newly created markers
-                    var markers = [];
-                    var uniqueId = 1;
-
-                    window.initMap = initMap;
-            </script>
-            <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6a6E_r_udr7CXLmLZ-6HspypPd9qvMU&callback=initMap&v=weekly"
-            defer
-            ></script>
-            <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
     </div>
     <!-- map api end -->
 
@@ -211,16 +131,83 @@
     <div class="container my-5" id="contact">
         <h1 class="text-center fw-bolder">Contact Me!</h1>
         <div class="row text-center">
-            <div class="col">
+            <div class="col w-20">
                 <a href="https://www.linkedin.com/in/keng-boon-ang-896a88125/"><img src="img/linkedin.png" id="linkedin" class="img-fluid w-50"></a>
             </div>
 
-            <div class="col">
+            <div class="col w-20">
                 <a href="https://github.com/kengboonang"><img src="img/github.png" id="github" class="img-fluid bg-dark rounded-5 w-50"></a>
             </div>
 
         </div>
     </div>
     <!-- contact end -->
+
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 3,
+                center: { lat: -28.024, lng: 140.887 },
+            });
+
+            // Add a marker clusterer to manage the markers.
+            const markerCluster = new markerClusterer.MarkerClusterer({ map, markers });
+            map.addListener("click", (e) => {
+                placeMarkerAndPanTo(e.latLng, map);
+            });
+            }
+
+            // create marker a.k.a adam's face on click
+            function placeMarkerAndPanTo(latLng, map) {
+                var marker = new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    icon: './img/head.jpeg'
+                });
+                const infoWindow = new google.maps.InfoWindow({
+                    content: "",
+                    disableAutoPan: true,
+                    });
+                // Set unique id
+                marker.id = uniqueId;
+                uniqueId++;
+                // set infoWindow
+                var label = 'Swiny cat meow meow meow';
+                // 'tag' the new marker
+                label += "<br /><input type = 'button' va;ue = 'Delete' onclick = 'DeleteMarker(" + marker.id + ");' value = 'Delete' />";
+                marker.addListener("click", (googleMapsEvent) => {
+                    infoWindow.setContent(label);
+                    infoWindow.open(map, marker);});
+                //Add marker to the array.
+                markers.push(marker);
+                // pan to marker
+                map.panTo(latLng);
+                }
+
+            function DeleteMarker(id) {
+                //Find and remove the marker from the Array
+                for (var i = 0; i < markers.length; i++) {
+                    if (markers[i].id == id) {
+                        //Remove the marker from Map                  
+                        markers[i].setMap(null);
+        
+                        //Remove the marker from array.
+                        markers.splice(i, 1);
+                        return;
+                    }
+                }
+            };
+            
+            // separate list for newly created markers
+            var markers = [];
+            var uniqueId = 1;
+
+            window.initMap = initMap;
+    </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6a6E_r_udr7CXLmLZ-6HspypPd9qvMU&callback=initMap&v=weekly"
+    defer
+    ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
 </body>
 </html>
